@@ -36,7 +36,7 @@ SD_Error FindSCR(u16 rca,u32 *pscr);
 u8 convert_from_bytes_to_power_of_two(u16 NumberOfBytes); 
 
 
-static u8 CardType=SDIO_STD_CAPACITY_SD_CARD_V1_1;		//SD卡类型（默认为1.x卡）
+static u8 CardType=SDIO_HIGH_CAPACITY_SD_CARD;		//SD卡类型（默认为1.x卡）
 static u32 CSD_Tab[4],CID_Tab[4],RCA=0;					//SD卡CSD,CID以及相对地址(RCA)数据
 static u8 DeviceMode=SD_DMA_MODE;		   				//工作模式,注意,工作模式必须通过SD_SetDeviceMode,后才算数.这里只是定义一个默认的模式(SD_DMA_MODE)
 static u8 StopCondition=0; 								//是否发送停止传输标志位,DMA多块读写的时候用到  
@@ -135,8 +135,8 @@ SD_Error SD_Init(void)
 			clkdiv=SDIO_TRANSFER_CLK_DIV+2;	//V1.1/V2.0卡，设置最高48/4=12Mhz
 		}else clkdiv=SDIO_TRANSFER_CLK_DIV;	//SDHC等其他卡，设置最高48/2=24Mhz
 		SDIO_Clock_Set(clkdiv);	//设置时钟频率,SDIO时钟计算公式:SDIO_CK时钟=SDIOCLK/[clkdiv+2];其中,SDIOCLK固定为48Mhz 
-		//errorstatus=SD_SetDeviceMode(SD_DMA_MODE);	//设置为DMA模式
-		errorstatus=SD_SetDeviceMode(SD_POLLING_MODE);//设置为查询模式
+		errorstatus=SD_SetDeviceMode(SD_DMA_MODE);	//设置为DMA模式
+		//errorstatus=SD_SetDeviceMode(SD_POLLING_MODE);//设置为查询模式
  	}
 	return errorstatus;		 
 }

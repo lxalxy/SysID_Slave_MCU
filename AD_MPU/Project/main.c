@@ -1,4 +1,4 @@
-/**
+﻿/**
   ******************************************************************************
   * @file    Project/STM32F4xx_StdPeriph_Templates/main.c 
   * @author  MCD Application Team
@@ -24,6 +24,8 @@
   *
   ******************************************************************************
   */
+
+//这是dma的
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -78,10 +80,14 @@ u8 FirstFileFlag = 1;
 u16 ADValue = 0;
 float Vout = 0.0;
 char temp = 0;
-u8 temp_f_sync =0;
+u16 temp_f_sync =0;
 char isReady = 0;
 
 char check1,check2,check3 = 0;
+
+u32 num = 0;
+
+u16 TimerPeriod = 500;
 
 
 /**
@@ -91,10 +97,12 @@ char check1,check2,check3 = 0;
   */
 int main(void)
 {       
+		u16 TimerTemp = 0;
+		TimerTemp = 10000 / TimerPeriod;
 		delay_init(168);
 		Peripherals_Init();
 		Printf_Init(); //115200 baud
-		Timer4_Init(1000-1,8400-1);//读取中断，定时器时钟84M，分频系数8400，所以84M/8400/200=50hz	
+		Timer4_Init(TimerTemp-1,8400-1);//读取中断，定时器时钟84M，分频系数8400，所以84M/8400/200=50hz	
 		//Timer3_Init(10-1,8400-1);//按键中断，定时器时钟84M，分频系数8400，所以84M/8400/10=1000hz		
 		my_mem_init(SRAMIN);		//初始化内部内存池 
 		my_mem_init(SRAMCCM);		//初始化CCM内存池
@@ -160,13 +168,15 @@ void TIM4_IRQHandler(void)
 					if(isReady)
 					{
 							temp_f_sync++;
+							num++;
 							for(temp = 0; temp < sizeof(buf); temp++)
 							{
 										buf[temp]=0;
 							}
-							sprintf(buf, "%d %d %d %d\n", READ_MPU9250_ACCEL(1), READ_MPU9250_ACCEL(2), READ_MPU9250_2_ACCEL(1), READ_MPU9250_3_ACCEL(2));
+							sprintf(buf, "%d %d %d %d %d\n", READ_MPU9250_ACCEL(1), READ_MPU9250_ACCEL(2), READ_MPU9250_2_ACCEL(1), READ_MPU9250_3_ACCEL(2), num);
+							//sprintf(buf, "%d %d %d %d\n", num, READ_MPU9250_ACCEL(3), READ_MPU9250_2_ACCEL(3), READ_MPU9250_3_ACCEL(3));
 							res=f_write(file, buf, sizeof(buf), &bw);
-							if(temp_f_sync > 10)
+							if(temp_f_sync > TimerPeriod)
 							{
 										f_sync(file);
 										temp_f_sync = 0;

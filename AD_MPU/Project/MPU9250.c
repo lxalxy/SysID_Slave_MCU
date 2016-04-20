@@ -116,7 +116,7 @@ int16_t READ_MPU9250_ACCEL(uint8_t axis)
 		{
 				case 1:
 				{
-						BUF[0] = MPU9250_ReadOneByte(ACCEL_ADDRESS,ACCEL_XOUT_L); 
+						BUF[0] = MPU9250_ReadOneByte(ACCEL_ADDRESS,ACCEL_XOUT_L);
 						BUF[1] = MPU9250_ReadOneByte(ACCEL_ADDRESS,ACCEL_XOUT_H);
 						output = (BUF[1]<<8)|BUF[0];
 						//output = output * 2 / 32768; 						   //读取计算X轴数据

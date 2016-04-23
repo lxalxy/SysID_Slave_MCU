@@ -67,7 +67,7 @@ void Timer3_Init(u16 arr,u16 psc)
 		TIM_ITConfig(TIM3,TIM_IT_Update,ENABLE); //③允许定时器3更新中断
 
 		NVIC_InitStructure.NVIC_IRQChannel=TIM3_IRQn; //定时器3中断
-		NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=0x00; //抢占优先级1
+		NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=0x01; //抢占优先级1
 		NVIC_InitStructure.NVIC_IRQChannelSubPriority=0x01; //响应优先级3
 		NVIC_InitStructure.NVIC_IRQChannelCmd=ENABLE;
 		NVIC_Init(&NVIC_InitStructure);// ④初始化NVIC
@@ -90,7 +90,7 @@ void Timer4_Init(u16 arr,u16 psc)
 
 		NVIC_InitStructure.NVIC_IRQChannel=TIM4_IRQn; //定时器3中断
 		NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=0x01; //抢占优先级1
-		NVIC_InitStructure.NVIC_IRQChannelSubPriority=0x00; //响应优先级3
+		NVIC_InitStructure.NVIC_IRQChannelSubPriority=0x01; //响应优先级3
 		NVIC_InitStructure.NVIC_IRQChannelCmd=ENABLE;
 		NVIC_Init(&NVIC_InitStructure);// ④初始化NVIC
 

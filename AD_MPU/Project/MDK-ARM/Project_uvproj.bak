@@ -423,11 +423,6 @@
           <GroupName>STM32_EVAL</GroupName>
           <Files>
             <File>
-              <FileName>stm324xg_eval.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Utilities\STM32_EVAL\STM3240_41_G_EVAL\stm324xg_eval.c</FilePath>
-            </File>
-            <File>
               <FileName>Printf.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Utilities\STM32_EVAL\Common\Printf.c</FilePath>
@@ -618,6 +613,11 @@
           <GroupName>FATFS</GroupName>
           <Files>
             <File>
+              <FileName>malloc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\FATFS\src\malloc.c</FilePath>
+            </File>
+            <File>
               <FileName>diskio.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\FATFS\src\diskio.c</FilePath>
@@ -627,26 +627,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\FATFS\src\ff.c</FilePath>
             </File>
-            <File>
-              <FileName>malloc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\FATFS\src\malloc.c</FilePath>
-            </File>
-            <File>
-              <FileName>cc936.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\FATFS\src\option\cc936.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>HARDWARE</GroupName>
           <Files>
-            <File>
-              <FileName>sdio_sdcard.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\sdio_sdcard.c</FilePath>
-            </File>
             <File>
               <FileName>A2P_ADC.c</FileName>
               <FileType>1</FileType>
@@ -681,6 +666,21 @@
               <FileName>AD7606.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\AD7606.c</FilePath>
+            </File>
+            <File>
+              <FileName>I2C.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\I2C.c</FilePath>
+            </File>
+            <File>
+              <FileName>MPU9250.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MPU9250.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm324x7i_eval_sdio_sd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\stm324x7i_eval_sdio_sd.c</FilePath>
             </File>
           </Files>
         </Group>

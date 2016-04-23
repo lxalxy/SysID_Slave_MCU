@@ -42,11 +42,12 @@
 .\szw_stm32f407\main.o: ..\..\FATFS\src\ff.h
 .\szw_stm32f407\main.o: ..\..\FATFS\src\integer.h
 .\szw_stm32f407\main.o: ..\..\FATFS\src\ffconf.h
-.\szw_stm32f407\main.o: ..\sdio_sdcard.h
+.\szw_stm32f407\main.o: ..\stm324x7i_eval_sdio_sd.h
+.\szw_stm32f407\main.o: ..\stm324x7i_eval.h
 .\szw_stm32f407\main.o: ..\peripherals.h
 .\szw_stm32f407\main.o: ..\delay.h
 .\szw_stm32f407\main.o: ..\sys.h
-.\szw_stm32f407\main.o: ..\..\FATFS\src\malloc.h
 .\szw_stm32f407\main.o: ..\AD7606.h
 .\szw_stm32f407\main.o: ..\I2C.h
 .\szw_stm32f407\main.o: ..\MPU9250.h
+.\szw_stm32f407\main.o: ..\Queue.h

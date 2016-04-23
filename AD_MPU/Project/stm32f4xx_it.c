@@ -269,6 +269,18 @@ void SysTick_Handler(void)
   //TimingDelay_Decrement();
 }
 
+
+void SDIO_IRQHandler(void)
+{
+	printf("SD_ProcessIRQSrc!\n");
+	SD_ProcessIRQSrc();
+}
+void SD_SDIO_DMA_IRQHANDLER(void)
+{
+	printf("SD_ProcessDMAIRQ!\n");
+	SD_ProcessDMAIRQ();
+}
+
 /******************************************************************************/
 /*                 STM32F4xx Peripherals Interrupt Handlers                   */
 /*  Add here the Interrupt Handler for the used peripheral(s) (PPP), for the  */

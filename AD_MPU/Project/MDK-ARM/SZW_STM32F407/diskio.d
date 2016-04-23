@@ -1,7 +1,8 @@
 .\szw_stm32f407\diskio.o: ..\..\FATFS\src\diskio.c
 .\szw_stm32f407\diskio.o: ..\..\FATFS\src\diskio.h
 .\szw_stm32f407\diskio.o: ..\..\FATFS\src\integer.h
-.\szw_stm32f407\diskio.o: ..\sdio_sdcard.h
+.\szw_stm32f407\diskio.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
+.\szw_stm32f407\diskio.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\string.h
 .\szw_stm32f407\diskio.o: ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 .\szw_stm32f407\diskio.o: D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm4.h
 .\szw_stm32f407\diskio.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
@@ -37,4 +38,6 @@
 .\szw_stm32f407\diskio.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h
 .\szw_stm32f407\diskio.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h
 .\szw_stm32f407\diskio.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h
-.\szw_stm32f407\diskio.o: ..\..\FATFS\src\malloc.h
+.\szw_stm32f407\diskio.o: ..\stm324x7i_eval_sdio_sd.h
+.\szw_stm32f407\diskio.o: ..\stm324x7i_eval.h
+.\szw_stm32f407\diskio.o: ..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h

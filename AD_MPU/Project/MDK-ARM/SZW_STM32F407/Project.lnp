@@ -1,7 +1,7 @@
 --cpu Cortex-M4.fp
 ".\szw_stm32f407\stm32f4xx_it.o"
 ".\szw_stm32f407\main.o"
-".\szw_stm32f407\stm324xg_eval.o"
+".\szw_stm32f407\queue.o"
 ".\szw_stm32f407\printf.o"
 ".\szw_stm32f407\misc.o"
 ".\szw_stm32f407\stm32f4xx_adc.o"
@@ -38,18 +38,12 @@
 ".\szw_stm32f407\startup_stm32f4xx.o"
 ".\szw_stm32f407\diskio.o"
 ".\szw_stm32f407\ff.o"
-".\szw_stm32f407\malloc.o"
-".\szw_stm32f407\cc936.o"
-".\szw_stm32f407\sdio_sdcard.o"
-".\szw_stm32f407\a2p_adc.o"
 ".\szw_stm32f407\peripherals.o"
 ".\szw_stm32f407\delay.o"
-".\szw_stm32f407\rtc.o"
-".\szw_stm32f407\mti.o"
-".\szw_stm32f407\ads1256.o"
 ".\szw_stm32f407\ad7606.o"
 ".\szw_stm32f407\i2c.o"
 ".\szw_stm32f407\mpu9250.o"
+".\szw_stm32f407\stm324x7i_eval_sdio_sd.o"
 --library_type=microlib --strict --scatter ".\SZW_STM32F407\Project.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

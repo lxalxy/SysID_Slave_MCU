@@ -1,4 +1,3 @@
-//http://www.cnblogs.com/hiker-blogs/p/3694567.html
 #include <string.h>
 #include "Queue.h"
 /*******************************************************************************
